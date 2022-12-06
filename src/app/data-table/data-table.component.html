@@ -1,0 +1,143 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+  
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <p class="brand">Service Charge</p>
+      </a>
+      
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      
+
+      <div class="links">
+     
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"  id="active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item"  id="active">
+            <a class="nav-link" href="#">Ticket</a>
+          </li>
+          <li class="nav-item"  id="active">
+            <a class="nav-link" href="#">Report</a>
+          </li>
+          <li class="nav-item"  id="active">
+            <a class="nav-link" href="#">My Account</a>
+            
+          </li>
+        </ul>
+       
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <p id="title">Ticket Management </p>
+  <div id="btn1"> <button
+    class="btn add btn-primary"
+   id="btnNew"
+   className="btn"
+   (click)="openDialog()"
+   >  New</button>
+</div>
+  
+</div>
+
+  
+<div class="container">
+  <p id="sub-text">Ticket List</p>
+</div>
+
+
+
+<div class="container">
+<div class="search">
+  
+  <input
+            id="input"
+            className="input"
+            placeholder="Search"
+            type="text"
+            onChange={onChange}
+        /> 
+  <!-- <button id="searchbtn">Search</button> -->
+  <button class="btn search "></button>
+</div>
+</div>
+
+
+
+<div class="table">
+  <div class="mat-elevation-z8 data-table">
+    <table mat-table class="full-width-table" matSort aria-label="Elements">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Ticket ID</th>
+        <td mat-cell *matCellDef="let row">{{row.ticketID}}</td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let row">{{row.assignee}}</td>
+      </ng-container>
+  
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+        <td mat-cell *matCellDef="let row">{{row.status}}</td>
+      </ng-container>
+  
+        <!-- Subject Column -->
+        <ng-container matColumnDef="subject">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Subject</th>
+          <td mat-cell *matCellDef="let row">{{row.subject}}</td>
+        </ng-container>
+  
+         <!-- Description Column -->
+         <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+          <td mat-cell *matCellDef="let row">{{row.description}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+          <td mat-cell *matCellDef="let row">
+            <button class="btn edit btn-warning" (click)="editDialog()"></button>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+          <td mat-cell *matCellDef="let row">
+            <button class="btn cancel btn-danger"></button>
+        </ng-container>
+        
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator #paginator
+        [length]="dataSource?.data?.length"
+        [pageIndex]="0"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 20]"
+        aria-label="Select page">
+    </mat-paginator>
+  </div>
+  
+
+
+</div>
+

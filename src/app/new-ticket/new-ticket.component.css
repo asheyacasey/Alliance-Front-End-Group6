@@ -1,0 +1,37 @@
+* {
+    font-family: 'Poppins';
+  
+  }
+
+  #input {
+  
+    padding-left: 10px;
+    /* margin-left: 120px; */
+    margin-bottom: 15px;
+    border-radius: 8px;
+    width: 320px;
+    height: 40px;
+    border: none;
+    background-color: #ECECEC;
+    font-family: 'Poppins';
+    
+  }
+
+  #cancelbtn, #createbtn {
+    background-color: #AD5954;
+    border: none;
+    border-radius: 15px;
+    padding: 12px;
+    color: white;
+    margin-right: 10px;
+  }
+
+  .title {
+    text-align: center;
+    
+  }
+
+#title {
+    font-weight: 600;
+    font-size: 20px;
+}
