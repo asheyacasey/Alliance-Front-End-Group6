@@ -48,11 +48,7 @@
     
   }
   
-  .image {
-    margin-top: 80px;
-    padding-right: 20px;
-  
-  }
+ 
  
   
   
@@ -65,8 +61,10 @@
   }
 
 
- body {
-    background-color: green;
+ body{
+   
+    overflow-x: hidden; 
+    overflow-y: auto;
  }
 
  .grid-child-left {
@@ -78,6 +76,8 @@
 
  * {
     box-sizing: border-box;
+    
+    
   }
   
 
@@ -99,10 +99,6 @@
   
   .logo {
     background-color: #4B2E2C;
-    height: 50px;
-    width: 50px;
-   
-   
   }
 
 
@@ -110,17 +106,10 @@
   .right {
     width: 60%;
     height: 100vh;
-  
     position: relative;
-  
   }
   
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+
 
   #input {
   
@@ -156,7 +145,7 @@
   }
 
   #login {
-    padding-top: 20px;
+    padding-top: 80px;
     padding-left: 100px;
     margin-bottom: 0%;
     font-size: 50px;
@@ -192,12 +181,14 @@
     margin-top: 0%;
     font-size: 14px;
     color: #FFC895;
+    text-decoration: none;
 }
 
 #service-charge{
-    font-weight:900;
+    font-weight:800;
     font-family: 'Poppins';
-    font-size: 20px;
+    line-height: 1;
+    font-size: 50px;
     color: #AD5954;
 
   width: 150px;
@@ -207,3 +198,4 @@
   left: 50%;
   margin: -50px 0 0 -50px;
 }
+
