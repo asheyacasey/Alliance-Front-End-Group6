@@ -37,8 +37,15 @@ export class NewTicketComponent implements OnInit {
     ticketInfo.append('createdAt', this.transformedDate.toString());
 
     this.tickSrvc.createTicket(ticketInfo).subscribe((res) => {
-      console.log(res);
-      alert('Ticket was successfully created!');
+      if (this.ticketForm.valid) {
+        console.log(res);
+        if (confirm('Ticket was successfully created!')) {
+          window.location.reload();
+        };
+      }
+      else {
+        alert('Cannot create ticket!\nProvide required details.');
+      }
     })
 
   }

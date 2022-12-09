@@ -25,38 +25,40 @@ export class LoginComponent implements OnInit {
   loginUser() {
     var loginInfo: FormData = new FormData();
 
-    loginInfo.append('username', this.lFormInfo['username'].value);
-    loginInfo.append('password', this.lFormInfo['password'].value);
+    if (this.loginForm.valid) {
+      loginInfo.append('username', this.lFormInfo['username'].value);
+      loginInfo.append('password', this.lFormInfo['password'].value);
 
-    this.userSrvc.loginAuth(loginInfo).pipe(
-      map((response: any) => {
-        if (response.status == "SUCCESS") {
-          localStorage.setItem('userID', response.data.userID);
+      this.userSrvc.loginAuth(loginInfo).pipe(
+        map((response: any) => {
+          if (response.status == "SUCCESS") {
+            localStorage.setItem('userID', response.data.userID);
 
-          switch (response.data.userRole) {
-            case "Customer":
-              localStorage.setItem('userRole', "Customer");
-              break;
-            case "Admin":
-              localStorage.setItem('userRole', "Admin");
-              break;
-            case "Sales":
-              localStorage.setItem('userRole', "Sales");
-              break;
-            case "Billing In-Charge":
-              localStorage.setItem('userRole', "Billing In-Charge");
-              break;
-            case "Collection In-Charge":
-              localStorage.setItem('userRole', "Collection In-Charge");
-              break;
+            switch (response.data.userRole) {
+              case "Customer":
+                localStorage.setItem('userRole', "Customer");
+                break;
+              case "Admin":
+                localStorage.setItem('userRole', "Admin");
+                break;
+              case "Sales":
+                localStorage.setItem('userRole', "Sales");
+                break;
+              case "Billing In-Charge":
+                localStorage.setItem('userRole', "Billing In-Charge");
+                break;
+              case "Collection In-Charge":
+                localStorage.setItem('userRole', "Collection In-Charge");
+                break;
+            }
+
+            this.router.navigateByUrl('/dashboard');
           }
-
-          this.router.navigateByUrl('/dashboard');
-        }
-      }))
-      .subscribe((response) => {
-        console.log(response);
-      });
+        }))
+        .subscribe((response) => {
+          console.log(response);
+        });
+    }
   }
 
   get lFormInfo() {

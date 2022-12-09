@@ -15,6 +15,10 @@ export class TicketService {
     return this.httpClient.post(this.baseUrl + "create", ticketInfo);
   }
 
+  deleteTicket(ticketID: any) {
+    return this.httpClient.delete(this.baseUrl + "delete/" + ticketID);
+  }
+
   getAllTickets() {
     return this.httpClient.get(this.baseUrl + "all").pipe(
       map((response) => {

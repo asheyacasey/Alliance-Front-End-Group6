@@ -9,7 +9,7 @@
         <div id="input-container">
           <input formControlName="username" id="input" className="input" placeholder="Enter your username"
             type="text" /><br />
-          <mat-error *ngIf="lFormInfo.username.errors?.required && lFormInfo.username.errors?.invalid">Username is
+          <mat-error *ngIf="lFormInfo.username.errors?.invalid">Username is
             required.</mat-error>
         </div>
       </div>
@@ -19,7 +19,7 @@
         <div id="input-container">
           <input formControlName="password" id="input" className="input" placeholder="Enter your password"
             type="password" /><br />
-          <mat-error *ngIf="lFormInfo.password.errors?.required && lFormInfo.password.errors?.invalid">Password is
+          <mat-error *ngIf="lFormInfo.password.errors?.invalid">Password is
             required.</mat-error>
           <p id="forgot-password"><a routerLink="/forget-password" id="forgot-password"> Forgot Password</a>
           </p>
