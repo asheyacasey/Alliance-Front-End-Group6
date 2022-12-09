@@ -23,22 +23,24 @@ export class EditAddUserComponent implements OnInit {
   createUser() {
     var userInfo: FormData = new FormData();
 
-    userInfo.append('userEmail', this.uFormInfo['email'].value.toString());
-    userInfo.append('username', this.uFormInfo['username'].value.toString());
-    userInfo.append('password', this.uFormInfo['password'].value.toString());
-    userInfo.append('userFname', this.uFormInfo['firstName'].value.toString());
-    userInfo.append('userLname', this.uFormInfo['lastName'].value.toString());
-    userInfo.append('userRole', this.uFormInfo['role'].value.toString());
+    if (this.userForm.valid) {
+      userInfo.append('userEmail', this.uFormInfo['email'].value.toString());
+      userInfo.append('username', this.uFormInfo['username'].value.toString());
+      userInfo.append('password', this.uFormInfo['password'].value.toString());
+      userInfo.append('userFname', this.uFormInfo['firstName'].value.toString());
+      userInfo.append('userLname', this.uFormInfo['lastName'].value.toString());
+      userInfo.append('userRole', this.uFormInfo['role'].value.toString());
 
-    this.userSrvc.createUser(userInfo).subscribe((res) => {
-      if (this.userForm.valid) {
+      this.userSrvc.createUser(userInfo).subscribe((res) => {
         console.log(res);
         if (confirm('User was successfully created!')) {
           window.location.reload();
         }
-      }
-    })
-
+      })
+    }
+    else {
+      alert('Cannot create user!\nProvide required details.');
+    }
   }
 
   ngOnInit(): void {

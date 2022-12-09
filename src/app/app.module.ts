@@ -15,6 +15,8 @@ import { MatInput, MatInputModule } from '@angular/material/input';
 import { NavBarComponent } from './nav-bar/nav-bar/nav-bar.component';
 import { DatePipe } from '@angular/common';
 import { EditAddUserComponent } from './edit-add-user/edit-add-user.component';
+import { EditUserComponent } from './edit-user/edit-user/edit-user.component';
+import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
 
 export let AppInjector: Injector;
 
@@ -26,6 +28,8 @@ export let AppInjector: Injector;
     NewTicketComponent,
     EditAddUserComponent,
     NavBarComponent,
+    EditUserComponent,
+    EditTicketComponent,
   ],
   // entryComponents: [NewTicketComponent],
   imports: [

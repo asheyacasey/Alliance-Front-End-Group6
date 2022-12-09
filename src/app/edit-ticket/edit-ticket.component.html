@@ -1,65 +1,32 @@
-<div class="title">
-    <p id="title">Edit Ticket</p>
-</div>
-<div >
-    <p>Assignee</p>
-    <input
-              id="input"
-              className="input"
-              placeholder=""
-              type="text"
-              onChange={onChange}
-              name="email"
-          />
-    
-</div>
-<div >
-    <p>Status</p>
-    <input
-              id="input"
-              className="input"
-              placeholder=""
-              type="text"
-              onChange={onChange}
-              name="email"
-          />
-    
-</div>
-<div >
-    <p>Tracker</p>
-    <input
-              id="input"
-              className="input"
-              placeholder=""
-              type="text"
-              onChange={onChange}
-              name="email"
-          />
-    
-</div>
-<div >
-    <p>Subject</p>
-    <input
-              id="input"
-              className="input"
-              placeholder=""
-              type="text"
-              onChange={onChange}
-              name="email"
-          />
-    
-</div>
-<div >
-    <p>Description</p>
-    <input
-    id="input"
-    className="input"
-    placeholder=""
-    type="text"
-    onChange={onChange}
-    name="email"
-/>
-</div>
+<form [formGroup]="ticketForm" (ngSubmit)="updateTick()">
+    <div class="title">
+        <p id="title">Edit Ticket</p>
+    </div>
+    <div *ngIf="isAdmin">
+        <p>Assignee</p>
+        <input formControlName="assignee" id="input" className="input" placeholder="" type="text" />
 
-<button id="cancelbtn">Cancel</button>
-<button id="savebtn">Save</button>
+    </div>
+    <div *ngIf="isAdmin">
+        <p>Status</p>
+        <input formControlName="status" id="input" className="input" placeholder="" type="text" />
+
+    </div>
+    <div *ngIf="isAdmin">
+        <p>Tracker</p>
+        <input formControlName="tracker" id="input" className="input" placeholder="" type="text" />
+
+    </div>
+    <div>
+        <p>Subject</p>
+        <input formControlName="subject" id="input" className="input" placeholder="" type="text" />
+
+    </div>
+    <div>
+        <p>Description</p>
+        <input formControlName="description" id="input" className="input" placeholder="" type="text" />
+    </div>
+
+    <!-- <button id="cancelbtn">Cancel</button> -->
+    <button id="savebtn" type="submit">Save</button>
+</form>

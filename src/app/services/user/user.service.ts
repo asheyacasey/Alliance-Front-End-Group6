@@ -18,6 +18,14 @@ export class UserService {
     return this.httpClient.post(this.baseUrl + "create", userInfo);
   }
 
+  editUser(userInfo: any) {
+    return this.httpClient.post(this.baseUrl + "update/" + userInfo['userID'], userInfo);
+  }
+
+  deleteUser(userID: any) {
+    return this.httpClient.delete(this.baseUrl + "delete/" + userID);
+  }
+
   getAllUsers() {
     return this.httpClient.get(this.baseUrl + "all").pipe(
       map((response) => {
@@ -32,10 +40,6 @@ export class UserService {
         return users;
       })
     );
-  }
-
-  deleteUser(userID: any) {
-    return this.httpClient.delete(this.baseUrl + "delete/" + userID);
   }
 
 }

@@ -30,24 +30,23 @@ export class NewTicketComponent implements OnInit {
   createTick() {
     var ticketInfo: FormData = new FormData();
 
-    ticketInfo.append('status', "New");
-    ticketInfo.append('subject', this.tFormInfo['subject'].value.toString());
-    ticketInfo.append('description', this.tFormInfo['description'].value.toString());
-    ticketInfo.append('requesterID', this.loggedUser.toString());
-    ticketInfo.append('createdAt', this.transformedDate.toString());
+    if (this.ticketForm.valid) {
+      ticketInfo.append('status', "New");
+      ticketInfo.append('subject', this.tFormInfo['subject'].value.toString());
+      ticketInfo.append('description', this.tFormInfo['description'].value.toString());
+      ticketInfo.append('requesterID', this.loggedUser.toString());
+      ticketInfo.append('createdAt', this.transformedDate.toString());
 
-    this.tickSrvc.createTicket(ticketInfo).subscribe((res) => {
-      if (this.ticketForm.valid) {
-        console.log(res);
+      this.tickSrvc.createTicket(ticketInfo).subscribe((res) => {
         if (confirm('Ticket was successfully created!')) {
+          console.log(res);
           window.location.reload();
         };
-      }
-      else {
-        alert('Cannot create ticket!\nProvide required details.');
-      }
-    })
-
+      })
+    }
+    else {
+      alert('Cannot create ticket!\nProvide required details.');
+    }
   }
 
   get tFormInfo() {
