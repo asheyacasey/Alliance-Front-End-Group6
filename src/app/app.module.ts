@@ -11,6 +11,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { NewTicketComponent } from './new-ticket/new-ticket.component';
 import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { UserManagementComponent } from './user-management/user-management.component';
+import { EditAddUserComponent } from './edit-add-user/edit-add-user.component';
+
 
 
 
@@ -23,6 +26,9 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
     NewTicketComponent,
     EditTicketComponent,
     ForgetPasswordComponent,
+    UserManagementComponent,
+    EditAddUserComponent,
+  
   ],
   entryComponents: [NewTicketComponent],
   imports: [

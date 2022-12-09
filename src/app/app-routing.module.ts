@@ -4,12 +4,16 @@ import { LoginComponent } from './login/login.component';
 import { DataTableComponent } from './data-table/data-table.component';
 import { NewTicketComponent } from './new-ticket/new-ticket.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { UserManagementComponent } from './user-management/user-management.component';
+
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'datatable', component: DataTableComponent},
-  { path: 'forget-password', component: ForgetPasswordComponent}
+  { path: 'forget-password', component: ForgetPasswordComponent},
+  { path: 'user-management', component: UserManagementComponent},
+  
   
 ];
 
@@ -18,4 +22,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ LoginComponent, DataTableComponent, ForgetPasswordComponent]
+export const routingComponents = [ LoginComponent, DataTableComponent, ForgetPasswordComponent, UserManagementComponent]
