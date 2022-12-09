@@ -5,6 +5,8 @@ import { MatTable } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { UserManagementDataSource, UserManagementItem } from './user-management-datasource';
 import { EditAddUserComponent } from '../edit-add-user/edit-add-user.component';
+import { NewTicketComponent } from '../new-ticket/new-ticket.component';
+import { EditTicketComponent } from '../edit-ticket/edit-ticket.component';
 
 
 
@@ -20,14 +22,22 @@ export class UserManagementComponent implements AfterViewInit {
   dataSource: UserManagementDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['userID', 'name', 'lname', 'fname', 'role', 'password'];
+  displayedColumns = ['userID', 'name', 'lname', 'fname', 'role', 'password', 'edit', 'delete', ];
 
   constructor(public dialog: MatDialog) {
     this.dataSource = new UserManagementDataSource();
   }
 
-  openDialog() {
+  addDialog() {
     this.dialog.open(EditAddUserComponent);
+  }
+
+  openDialog() {
+    this.dialog.open(NewTicketComponent);
+  }
+
+  editDialog(){
+    this.dialog.open(EditTicketComponent);
   }
 
   ngAfterViewInit(): void {
