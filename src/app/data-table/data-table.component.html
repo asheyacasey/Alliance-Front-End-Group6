@@ -3,7 +3,8 @@
 
 <div class="container">
   <p id="title">Ticket Management </p>
-  <div id="btn1"> <button class="btn add btn-primary" id="btnNew" className="btn" (click)="openDialog()"> New</button>
+  <div id="btn1"> <button class="btn add btn-primary" id="btnNew" className="btn" (click)="openDialog()"
+      *ngIf="isCustomer"> New</button>
   </div>
 
 </div>

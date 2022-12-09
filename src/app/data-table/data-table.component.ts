@@ -103,6 +103,8 @@ export class DataTableComponent implements AfterViewInit {
         this.isCollection = true;
         break;
     }
+
+
   }
 }
 

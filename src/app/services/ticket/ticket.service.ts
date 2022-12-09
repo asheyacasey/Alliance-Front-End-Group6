@@ -11,6 +11,10 @@ export class TicketService {
 
   constructor(private httpClient: HttpClient) { }
 
+  createTicket(ticketInfo: any) {
+    return this.httpClient.post(this.baseUrl + "create", ticketInfo);
+  }
+
   getAllTickets() {
     return this.httpClient.get(this.baseUrl + "all").pipe(
       map((response) => {

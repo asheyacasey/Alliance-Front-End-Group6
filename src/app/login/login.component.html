@@ -7,8 +7,8 @@
       <div id="email-container">
         <p id="sub-text">Username</p>
         <div id="input-container">
-          <input formControlName="username" id="input" className="input" placeholder="Enter your username" type="text"
-            required /><br />
+          <input formControlName="username" id="input" className="input" placeholder="Enter your username"
+            type="text" /><br />
           <mat-error *ngIf="lFormInfo.username.errors?.required && lFormInfo.username.errors?.invalid">Username is
             required.</mat-error>
         </div>
@@ -18,7 +18,7 @@
         <p id="sub-text">Password</p>
         <div id="input-container">
           <input formControlName="password" id="input" className="input" placeholder="Enter your password"
-            type="password" required /><br />
+            type="password" /><br />
           <mat-error *ngIf="lFormInfo.password.errors?.required && lFormInfo.password.errors?.invalid">Password is
             required.</mat-error>
           <p id="forgot-password"><a routerLink="/forget-password" id="forgot-password"> Forgot Password</a>

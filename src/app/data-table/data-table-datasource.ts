@@ -102,6 +102,7 @@ export class DataTableDataSource extends DataSource<DataTableItem> {
     } else {
       throw Error('Please set the paginator and sort on the data source before connecting.');
     }
+
   }
 
   /**
