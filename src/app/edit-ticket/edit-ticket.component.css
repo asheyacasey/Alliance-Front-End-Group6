@@ -17,7 +17,7 @@
     
   }
 
-  #cancelbtn, #savebtn {
+  #savebtn {
     background-color: #AD5954;
     border: none;
     border-radius: 15px;
@@ -27,6 +27,19 @@
     margin-right: 10px;
   }
 
+  #cancelbtn {
+    background-color: #9e9e9e;
+    border: none;
+    border-radius: 15px;
+    padding: 12px;
+    width: 120px;
+    color: white;
+    margin-right: 10px;
+  }
+
+  #btn {
+    
+  }
   .title {
     text-align: center;
     

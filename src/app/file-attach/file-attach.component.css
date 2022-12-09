@@ -1,0 +1,85 @@
+* {
+    font-family: 'Poppins';
+  
+  }
+
+  #input {
+  
+    padding-left: 10px;
+    /* margin-left: 120px; */
+    margin-bottom: 15px;
+    border-radius: 8px;
+    width: 320px;
+    height: 40px;
+    border: none;
+    background-color: #ECECEC;
+    font-family: 'Poppins';
+    
+  }
+
+#btn {
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+ #savebtn {
+    background-color: #AD5954;
+    border: none;
+    border-radius: 15px;
+    padding: 12px;
+    width: 120px;
+    color: white;
+    margin-right: 10px;
+  }
+
+  #cancelbtn {
+    background-color: #9e9e9e;
+    border: none;
+    border-radius: 15px;
+    padding: 12px;
+    width: 120px;
+    color: white;
+    margin-right: 10px;
+  }
+
+  #attachbtn {
+    background-color: #AD5954;
+    border: none;
+    border-radius: 15px;
+    padding: 12px;
+    width: 250px;
+    color: white;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    
+  }
+
+  .title {
+    text-align: center;
+    
+  }
+
+#title {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+button.btn.add::before {
+    font-family: fontAwesome;
+    content: "\f093\00a0";
+  }
+
+#file {
+    margin-left: 50px;
+    margin-top: 20px;
+    display: flex;
+}
+
+#filecontent {
+    font-weight: 200;
+    color: blue;
+    margin-left: 15px;
+    text-decoration: underline;
+}

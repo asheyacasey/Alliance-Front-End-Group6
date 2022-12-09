@@ -209,3 +209,8 @@ button.btn.add::before {
   font-family: fontAwesome;
   content: "\f055\00a0";
 }
+
+button.btn.attach::before {
+  font-family: fontAwesome;
+  content: "\f0c6\00a0";
+}

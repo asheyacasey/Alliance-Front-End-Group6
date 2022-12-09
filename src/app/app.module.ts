@@ -8,6 +8,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatSortModule } from '@angular/material/sort';
 import { NewTicketComponent } from './new-ticket/new-ticket.component';
+import { FileAttachComponent } from './file-attach/file-attach.component';
 
 
 
@@ -18,6 +19,7 @@ import { NewTicketComponent } from './new-ticket/new-ticket.component';
   declarations: [
     AppComponent,
     routingComponents,
+    FileAttachComponent,
     
   
   ],

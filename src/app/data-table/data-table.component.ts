@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { MatTable } from '@angular/material/table';
 import { DataTableDataSource, DataTableItem } from './data-table-datasource';
+import { FileAttachComponent } from '../file-attach/file-attach.component';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class DataTableComponent implements AfterViewInit {
 
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name', 'status', 'subject', 'description', 'edit', 'delete'];
+  displayedColumns = ['id', 'name', 'status', 'subject', 'description', 'edit', 'delete', 'attach'];
 
   constructor(public dialog: MatDialog) {
     this.dataSource = new DataTableDataSource();
@@ -39,6 +40,10 @@ export class DataTableComponent implements AfterViewInit {
 
   editDialog(){
     this.dialog.open(EditTicketComponent);
+  }
+
+  attachDialog(){
+    this.dialog.open(FileAttachComponent);
   }
 
  
