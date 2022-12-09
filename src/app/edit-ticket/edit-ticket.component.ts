@@ -53,7 +53,29 @@ export class EditTicketComponent implements OnInit {
   }
 
   updateTick() {
+    var ticketInfo: FormData = new FormData();
 
+    if (this.ticketForm.valid) {
+      ticketInfo.append('assigneeID', this.tFormInfo['assignee'].value.toString());
+      ticketInfo.append('status', this.tFormInfo['status'].value.toString());
+      ticketInfo.append('tracker', this.tFormInfo['tracker'].value.toString());
+      ticketInfo.append('subject', this.tFormInfo['subject'].value.toString());
+      ticketInfo.append('description', this.tFormInfo['description'].value.toString());
+
+      this.tickSrvc.editTicket(ticketInfo).subscribe((res) => {
+        console.log(res);
+        if (confirm('Ticket was successfully updated!')) {
+          window.location.reload();
+        }
+      })
+    }
+    else {
+      alert("Cannot update ticket!\nPlease don\'t leave any field empty");
+    }
+  }
+
+  get tFormInfo() {
+    return this.ticketForm.controls;
   }
 
 }
