@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from '../models/user/user.model';
 import { UserService } from '../services/user/user.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +12,7 @@ import { UserService } from '../services/user/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private userSrvc: UserService, private lForm: FormBuilder) { }
-
-  isUser: any;
-  isAdmin: any;
-  isSales: any;
-  isBilling: any;
-  isCollection: any;
+  constructor(private userSrvc: UserService, private lForm: FormBuilder, private router: Router) { }
 
   loginForm = this.lForm.group({
     username: ['', Validators.required],
@@ -27,16 +23,40 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
-    const userInfo: User = {
-      username: this.lFormInfo['username'].value,
-      password: this.lFormInfo['password'].value
-    };
+    var loginInfo: FormData = new FormData();
 
-    this.userSrvc.loginAuth(userInfo)
-      .subscribe(
-        response => console.log(response),
-        error => console.log(error)
-      );
+    loginInfo.append('username', this.lFormInfo['username'].value);
+    loginInfo.append('password', this.lFormInfo['password'].value);
+
+    this.userSrvc.loginAuth(loginInfo).pipe(
+      map((response: any) => {
+        if (response.status == "SUCCESS") {
+          localStorage.setItem('userID', response.data.userID);
+
+          switch (response.data.userRole) {
+            case "Customer":
+              localStorage.setItem('userRole', "Customer");
+              break;
+            case "Admin":
+              localStorage.setItem('userRole', "Admin");
+              break;
+            case "Sales":
+              localStorage.setItem('userRole', "Sales");
+              break;
+            case "Billing In-Charge":
+              localStorage.setItem('userRole', "Billing In-Charge");
+              break;
+            case "Collection In-Charge":
+              localStorage.setItem('userRole', "Collection In-Charge");
+              break;
+          }
+
+          this.router.navigateByUrl('/dashboard');
+        }
+      }))
+      .subscribe((response) => {
+        console.log(response);
+      });
   }
 
   get lFormInfo() {

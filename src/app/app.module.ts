@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,15 +13,16 @@ import { NewTicketComponent } from './new-ticket/new-ticket.component';
 import { FileAttachComponent } from './file-attach/file-attach.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInput, MatInputModule } from '@angular/material/input';
+import { NavBarComponent } from './nav-bar/nav-bar/nav-bar.component';
+
+export let AppInjector: Injector;
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
     FileAttachComponent,
-
-
-  ],
+    NavBarComponent,],
   entryComponents: [NewTicketComponent],
   imports: [
     BrowserModule,
@@ -37,6 +38,12 @@ import { MatInput, MatInputModule } from '@angular/material/input';
     MatInputModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+
+export class AppModule {
+  constructor(private injector: Injector) {
+    AppInjector = this.injector;
+  }
+}
+

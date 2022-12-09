@@ -10,13 +10,13 @@ import { ReportsComponent } from './reports/reports.component';
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent},
-  { path: 'datatable', component: DataTableComponent},
-  { path: 'forget-password', component: ForgetPasswordComponent},
-  { path: 'user-management', component: UserManagementComponent},
-  { path: 'reports', component: ReportsComponent},
-  
-  
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DataTableComponent },
+  { path: 'forget-password', component: ForgetPasswordComponent },
+  { path: 'user-management', component: UserManagementComponent },
+  { path: 'reports', component: ReportsComponent },
+
+
 ];
 
 @NgModule({
@@ -24,4 +24,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ LoginComponent, DataTableComponent, ForgetPasswordComponent, UserManagementComponent, ReportsComponent]
+export const routingComponents = [LoginComponent, DataTableComponent, ForgetPasswordComponent, UserManagementComponent, ReportsComponent]

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from 'src/app/models/user/user.model';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  loginAuth(userInfo: User) {
-    return this.httpClient.post(this.baseUrl + "login", { userInfo });
+  loginAuth(loginInfo: any) {
+    return this.httpClient.post(this.baseUrl + "login", loginInfo);
   }
 }
