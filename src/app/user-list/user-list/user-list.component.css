@@ -1,0 +1,219 @@
+* {
+    font-family: 'Poppins';
+}
+
+
+.full-width-table {
+    width: 100%;
+}
+
+.data-table {
+    width: 80%;
+    margin: 20px auto;
+
+}
+
+.table {
+    padding-bottom: 50px;
+}
+
+.tickHeader {
+    padding-bottom: 7px;
+}
+
+* {
+    font-family: 'Poppins';
+}
+
+.dropdown {
+    margin-left: 30px;
+    background-color: #F7F7F7;
+    color: white;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.navbar {
+    background-color: #AD5954;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #FFC895;
+}
+
+.sub-menu {
+    display: none;
+}
+
+
+.nav-link:hover .sub-menu {
+    display: block;
+    position: absolute;
+    background-color: #FFC895;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+
+.nav-link:hover .sub-menu ul {
+    display: block;
+    margin: 10px;
+}
+
+
+
+.brand {
+    color: white;
+    font-weight: 600;
+}
+
+#user-name {
+    position: relative;
+
+}
+
+#title {
+    margin-top: 50px;
+    font-weight: 600;
+    font-size: 20px;
+
+}
+
+#sub-text {
+    color: #A0A0A0;
+}
+
+.brand {
+
+    margin-bottom: 0%;
+}
+
+#top {
+    background-color: purple;
+}
+
+#btn1 {
+    margin-top: 40px;
+    width: 150px;
+    height: 40px;
+    margin-left: 70%;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+#btn2 {
+    margin-top: 40px;
+
+    width: 150px;
+    height: 40px;
+    margin-left: 20px;
+
+}
+
+#btnNew {
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #AD5954;
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+}
+
+#btnEdit {
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #4B2E2C;
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+}
+
+.container {
+    display: flex;
+
+    /* width: 100vh;
+    position: relative; */
+
+}
+
+
+.search {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+#input {
+
+    padding-left: 10px;
+    /* margin-left: 120px; */
+    margin-bottom: 15px;
+    border-radius: 8px;
+    width: 320px;
+    height: 40px;
+    border: none;
+    background-color: #ECECEC;
+    font-family: 'Poppins';
+
+}
+
+#searchbtn {
+    margin-left: 10px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #AD5954;
+    color: white;
+}
+
+#editbtn {
+    background-color: greenyellow;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+}
+
+button.btn.edit::before {
+    font-family: fontAwesome;
+    content: "\f040\00a0";
+
+}
+
+button.btn.cancel::before {
+    font-family: fontAwesome;
+    content: "\f014\00a0";
+}
+
+button.btn.search::before {
+    font-family: fontAwesome;
+    content: "\f002\00a0";
+    background-color: #AD5954;
+    border-radius: 15px;
+    padding: 15px;
+    color: white;
+    justify-content: center;
+
+
+}
+
+button.btn.add::before {
+    font-family: fontAwesome;
+    content: "\f055\00a0";
+}
+
+button.btn.attach::before {
+    font-family: fontAwesome;
+    content: "\f0c6\00a0";
+}

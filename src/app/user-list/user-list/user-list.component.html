@@ -1,1 +1,47 @@
-<p>user-list works!</p>
+<app-nav-bar [isAdmin]="isAdmin" [isCustomer]="isCustomer" [isSales]="isSales" [isBilling]="isBilling"
+    [isCollection]="isCollection"></app-nav-bar>
+
+<div class="container">
+    <p id="title">User Management </p>
+    <div id="btn1">
+        <button class="btn add btn-primary" id="btnNew" className="btn" (click)="addDialog()">New
+        </button>
+    </div>
+</div>
+
+<div class="container">
+    <p id="sub-text">User List</p>
+</div>
+
+<div class="table">
+    <div class="mat-elevation-z8 data-table">
+        <table class="full-width-table">
+            <tbody>
+                <th class="tickHeader">User ID</th>
+                <th class="tickHeader">Last Name</th>
+                <th class="tickHeader">First Name</th>
+                <th class="tickHeader">Username</th>
+                <th class="tickHeader">Password</th>
+                <th class="tickHeader">Email</th>
+                <th class="tickHeader">Role</th>
+                <tr *ngFor="let user of userList$">
+                    <td>{{ user.userID }}</td>
+                    <td>{{ user.userLname }}</td>
+                    <td>{{ user.userFname }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.password }}</td>
+                    <td>{{ user.userEmail }}</td>
+                    <td>{{ user.userRole }}</td>
+                    <td>
+                        <button class="btn edit btn-warning" (click)="addDialog()"
+                            *ngIf="isAdmin || isCustomer"></button>
+                    </td>
+                    <td>
+                        <button class="btn cancel btn-danger" (click)="deleteUser(user.userID)"
+                            *ngIf="isAdmin || isCustomer"></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

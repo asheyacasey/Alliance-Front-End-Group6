@@ -26,8 +26,8 @@ export class TicketListComponent implements OnInit {
     this.dialog.open(NewTicketComponent);
   }
 
-  editDialog() {
-    this.dialog.open(EditTicketComponent);
+  editDialog(ticket: any) {
+    this.dialog.open(EditTicketComponent, { data: { ticket: ticket } });
   }
 
   attachDialog() {

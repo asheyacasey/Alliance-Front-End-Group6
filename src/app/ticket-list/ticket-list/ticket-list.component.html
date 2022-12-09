@@ -34,13 +34,15 @@
                     <td>{{ ticket.requesterID }}</td>
                     <td>{{ ticket.createdAt }}</td>
                     <td>
-                        <button class="btn edit btn-warning" (click)="editDialog()"></button>
+                        <button class="btn edit btn-warning" (click)="editDialog(ticket)"
+                            *ngIf="isAdmin || isCustomer"></button>
                     </td>
                     <td>
-                        <button class="btn cancel btn-danger" (click)="deleteTicket(ticket.ticketID)"></button>
+                        <button class="btn cancel btn-danger" (click)="deleteTicket(ticket.ticketID)"
+                            *ngIf="isAdmin || isCustomer"></button>
                     </td>
                     <td>
-                        <button button class="btn attach btn-info" (click)="attachDialog()"></button>
+                        <button button class="btn attach btn-info" (click)="attachDialog()" *ngIf="!isAdmin"></button>
                     </td>
                 </tr>
             </tbody>

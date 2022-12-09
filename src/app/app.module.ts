@@ -14,6 +14,7 @@ import { FileAttachComponent } from './file-attach/file-attach.component';
 import { MatInput, MatInputModule } from '@angular/material/input';
 import { NavBarComponent } from './nav-bar/nav-bar/nav-bar.component';
 import { DatePipe } from '@angular/common';
+import { EditAddUserComponent } from './edit-add-user/edit-add-user.component';
 
 export let AppInjector: Injector;
 
@@ -23,6 +24,7 @@ export let AppInjector: Injector;
     routingComponents,
     FileAttachComponent,
     NewTicketComponent,
+    EditAddUserComponent,
     NavBarComponent,
   ],
   // entryComponents: [NewTicketComponent],
@@ -37,7 +39,7 @@ export let AppInjector: Injector;
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],
