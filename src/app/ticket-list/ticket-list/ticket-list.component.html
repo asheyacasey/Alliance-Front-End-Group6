@@ -1,0 +1,51 @@
+<app-nav-bar [isAdmin]="isAdmin" [isCustomer]="isCustomer" [isSales]="isSales" [isBilling]="isBilling"
+    [isCollection]="isCollection"></app-nav-bar>
+
+<div class="container">
+    <p id="title">Ticket Management </p>
+    <div id="btn1"> <button class="btn add btn-primary" id="btnNew" className="btn" (click)="openDialog()"
+            *ngIf="isCustomer"> New</button>
+    </div>
+</div>
+
+<div class="container">
+    <p id="sub-text">Ticket List</p>
+</div>
+
+<div class="table">
+    <div class="mat-elevation-z8 data-table">
+        <table class="full-width-table">
+            <tbody>
+                <th class="tickHeader">Ticket ID</th>
+                <th class="tickHeader">Assignee ID</th>
+                <th class="tickHeader">Status</th>
+                <th class="tickHeader">Subject</th>
+                <th class="tickHeader">Description</th>
+                <th class="tickHeader">Tracker</th>
+                <th class="tickHeader">Requester ID</th>
+                <th class="tickHeader">Created At</th>
+                <tr *ngFor="let ticket of ticketList$">
+                    <td>{{ ticket.ticketID }}</td>
+                    <td>{{ ticket.assigneeID }}</td>
+                    <td>{{ ticket.status }}</td>
+                    <td>{{ ticket.subject }}</td>
+                    <td>{{ ticket.description }}</td>
+                    <td>{{ ticket.tracker }}</td>
+                    <td>{{ ticket.requesterID }}</td>
+                    <td>{{ ticket.createdAt }}</td>
+                    <td>
+                        <button class="btn edit btn-warning" (click)="editDialog(ticket)"
+                            *ngIf="isAdmin || isCustomer"></button>
+                    </td>
+                    <td>
+                        <button class="btn cancel btn-danger" (click)="deleteTicket(ticket.ticketID)"
+                            *ngIf="isAdmin || isCustomer"></button>
+                    </td>
+                    <td>
+                        <button button class="btn attach btn-info" (click)="attachDialog()" *ngIf="!isAdmin"></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

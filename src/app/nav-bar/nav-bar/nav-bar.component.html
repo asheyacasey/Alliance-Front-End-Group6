@@ -1,0 +1,43 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" routerLink="/dashboard">
+                <p class="brand">Service Charge</p>
+            </a>
+
+        </div>
+        <!-- Collapsible wrapper -->
+
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
+            <!-- Icon -->
+
+
+            <div class="links">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" id="active" *ngIf="isAdmin">
+                        <a class="nav-link" routerLink="/user-management">User</a>
+                    </li>
+                    <li class="nav-item" id="active">
+                        <a class="nav-link" routerLink="/dashboard">Ticket</a>
+                    </li>
+                    <li class="nav-item" id="active" *ngIf="!isCustomer">
+                        <a class="nav-link" routerLink="/reports">Report</a>
+                    </li>
+                    <li class="nav-item" id="active">
+                        <a class="nav-link" href="#">My Account</a>
+
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>

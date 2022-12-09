@@ -1,65 +1,44 @@
 <div class="title">
-    <p id="title">USER ID</p>
+    <p id="title">CREATE USER</p>
 </div>
 
+<form [formGroup]="userForm" (ngSubmit)="createUser()">
+    <div>
+        <p>Username</p>
+        <input formControlName="username" id="input" className="input" placeholder="" type="text" />
 
+    </div>
+    <div>
+        <p>Email</p>
+        <input formControlName="email" id="input" className="input" placeholder="" type="email" />
 
-<div>
-    <p>Username</p>
-    <input
-              id="input"
-              className="input"
-              placeholder=""
-              type="text"
-              onChange={onChange}
-              name="email"
-          />
-    
-</div>
-<div >
-    <p>Password</p>
-    <input
-              id="input"
-              className="input"
-              placeholder=""
-              type="text"
-              onChange={onChange}
-              name="email"
-          />
-    
-</div>
-<div >
-    <p>First Name</p>
-    <input
-              id="input"
-              className="input"
-              placeholder=""
-              type="text"
-              onChange={onChange}
-              name="email"
-          />
-    
-</div>
-<div >
-    <p>Last Name</p>
-    <input
-              id="input"
-              className="input"
-              placeholder=""
-              type="text"
-              onChange={onChange}
-              name="email"
-          />
-    
-</div>
-<div >
-    <p>Role</p>
-    <select id="select"  >
-        <option value="">Select Role</option>
-        <option value="user">User</option>
-        <option value="admin">Admin</option>
-    </select>
-</div>
+    </div>
+    <div>
+        <p>Password</p>
+        <input formControlName="password" id="input" className="input" placeholder="" type="password" />
 
-<button id="cancelbtn">Cancel</button>
-<button id="savebtn">Save</button>
+    </div>
+    <div>
+        <p>First Name</p>
+        <input formControlName="firstName" id="input" className="input" placeholder="" type="text" />
+
+    </div>
+    <div>
+        <p>Last Name</p>
+        <input formControlName="lastName" id="input" className="input" placeholder="" type="text" />
+
+    </div>
+    <div>
+        <p>Role</p>
+        <select formControlName="role" id="select">
+            <option value="Customer">Customer</option>
+            <option value="Admin">Admin</option>
+            <option value="Sales">Sales</option>
+            <option value="Billing In-Charge">Billing In-Charge</option>
+            <option value="Collection In-Charge">Collection In-Charge</option>
+        </select>
+    </div>
+
+    <!-- <button id="cancelbtn">Cancel</button> -->
+    <button id="savebtn" type="submit">Save</button>
+</form>

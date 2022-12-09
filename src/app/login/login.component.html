@@ -1,57 +1,42 @@
- <div class="row">
-    <div class="column left" >
-    
-        <p id="login">Login</p>
-        <p id="admin" >Admin Access</p>
+<div class="row">
+  <div class="column left">
 
-      <div id="email-container"><p id="sub-text">Email</p>
+    <p id="login">Login</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+      <div id="email-container">
+        <p id="sub-text">Username</p>
         <div id="input-container">
-          <input
-              id="input"
-              className="input"
-              placeholder="Enter your email address"
-              type="text"
-              onChange={onChange}
-              name="email"
-          /><br />
+          <input formControlName="username" id="input" className="input" placeholder="Enter your username"
+            type="text" /><br />
+          <mat-error *ngIf="lFormInfo.username.errors?.invalid">Username is
+            required.</mat-error>
         </div>
       </div>
-      
-      
+
       <div id="password-container">
-         <p id="sub-text">Password</p>
+        <p id="sub-text">Password</p>
         <div id="input-container">
-          <input
-              id="input"
-              className="input"
-              placeholder="Enter your password"
-              type="text"
-              onChange={onChange}
-              name="email"
-          /><br />
+          <input formControlName="password" id="input" className="input" placeholder="Enter your password"
+            type="password" /><br />
+          <mat-error *ngIf="lFormInfo.password.errors?.invalid">Password is
+            required.</mat-error>
           <p id="forgot-password"><a routerLink="/forget-password" id="forgot-password"> Forgot Password</a>
-           </p>
+          </p>
         </div>
-       
-        </div>
-     
-        <div id="btn-container">
-          <button
-          id="btn"
-          className="btn"
-       
-      >
-         Sign In
-      </button>
-        </div>
-     
-      
-    </div>
-    <div class="column right" >
-      
-      <p id="service-charge">Service Charge</p>
-    </div>
+
+      </div>
+
+      <div id="btn-container">
+        <button id="btn" className="btn" type="submit">
+          Sign In
+        </button>
+      </div>
+    </form>
+
   </div>
+  <div class="column right">
 
-
-
+    <p id="service-charge">Service Charge</p>
+  </div>
+</div>
