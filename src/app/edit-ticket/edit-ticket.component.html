@@ -4,27 +4,32 @@
     </div>
     <div *ngIf="isAdmin">
         <p>Assignee</p>
-        <input formControlName="assignee" id="input" className="input" placeholder="" type="text" />
+        <input formControlName="assignee" id="input" className="input" placeholder="" type="text"
+            [(ngModel)]="ticketInfo['assigneeID']" />
 
     </div>
     <div *ngIf="isAdmin">
         <p>Status</p>
-        <input formControlName="status" id="input" className="input" placeholder="" type="text" />
+        <input formControlName="status" id="input" className="input" placeholder="" type="text"
+            [(ngModel)]="ticketInfo['status']" />
 
     </div>
     <div *ngIf="isAdmin">
         <p>Tracker</p>
-        <input formControlName="tracker" id="input" className="input" placeholder="" type="text" />
+        <input formControlName="tracker" id="input" className="input" placeholder="" type="text"
+            [(ngModel)]="ticketInfo['tracker']" />
 
     </div>
     <div>
         <p>Subject</p>
-        <input formControlName="subject" id="input" className="input" placeholder="" type="text" />
+        <input formControlName="subject" id="input" className="input" placeholder="" type="text"
+            [(ngModel)]="ticketInfo['subject']" />
 
     </div>
     <div>
         <p>Description</p>
-        <input formControlName="description" id="input" className="input" placeholder="" type="text" />
+        <input formControlName="description" id="input" className="input" placeholder="" type="text"
+            [(ngModel)]="ticketInfo['description']" />
     </div>
 
     <!-- <button id="cancelbtn">Cancel</button> -->
