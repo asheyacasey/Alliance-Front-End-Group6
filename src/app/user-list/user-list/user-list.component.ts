@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EditAddUserComponent } from 'src/app/edit-add-user/edit-add-user.component';
+import { EditUserComponent } from 'src/app/edit-user/edit-user/edit-user.component';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -22,6 +23,10 @@ export class UserListComponent implements OnInit {
 
   addDialog() {
     this.dialog.open(EditAddUserComponent);
+  }
+
+  editDialog(user: any) {
+    this.dialog.open(EditUserComponent, { data: { user } });
   }
 
   deleteUser(userID: any) {

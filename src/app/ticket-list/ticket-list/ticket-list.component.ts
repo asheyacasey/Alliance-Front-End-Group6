@@ -27,11 +27,11 @@ export class TicketListComponent implements OnInit {
   }
 
   editDialog(ticket: any) {
-    this.dialog.open(EditTicketComponent, { data: { ticket: ticket } });
+    this.dialog.open(EditTicketComponent, { data: { ticket } });
   }
 
-  attachDialog() {
-    this.dialog.open(FileAttachComponent);
+  attachDialog(ticketID: any) {
+    this.dialog.open(FileAttachComponent, { data: { ticketID } });
   }
 
   getTickets() {

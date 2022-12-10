@@ -1,0 +1,55 @@
+* {
+    font-family: 'Poppins';
+
+}
+
+#input {
+
+    padding-left: 10px;
+    /* margin-left: 120px; */
+    margin-bottom: 15px;
+    border-radius: 8px;
+    width: 320px;
+    height: 40px;
+    border: none;
+    background-color: #ECECEC;
+    font-family: 'Poppins';
+
+}
+
+#cancelbtn,
+#savebtn {
+    background-color: #AD5954;
+    border: none;
+    border-radius: 15px;
+    padding: 12px;
+    width: 120px;
+    color: white;
+    margin-right: 10px;
+}
+
+.title {
+    text-align: center;
+
+}
+
+#title {
+    font-weight: 600;
+    font-size: 20px;
+
+}
+
+#image {
+    font-family: fontAwesome;
+    content: "\f055\00a0";
+}
+
+#select {
+    text-decoration: none;
+    border-color: #AD5954;
+    border-radius: 5px;
+    color: rgb(94, 94, 94);
+    margin-bottom: 20px;
+    padding: 5px;
+
+}

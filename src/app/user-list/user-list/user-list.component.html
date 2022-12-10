@@ -33,7 +33,7 @@
                     <td>{{ user.userEmail }}</td>
                     <td>{{ user.userRole }}</td>
                     <td>
-                        <button class="btn edit btn-warning" (click)="addDialog()"
+                        <button class="btn edit btn-warning" (click)="editDialog(user)"
                             *ngIf="isAdmin || isCustomer"></button>
                     </td>
                     <td>

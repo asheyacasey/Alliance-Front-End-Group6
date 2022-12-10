@@ -1,1 +1,49 @@
-<p>edit-user works!</p>
+<div class="title">
+    <p id="title">EDIT USER</p>
+</div>
+
+<form [formGroup]="userForm" (ngSubmit)="editUser()">
+    <div>
+        <p>Username</p>
+        <input formControlName="username" id="input" className="input" placeholder="" type="text"
+            [(ngModel)]="userInfo['username']" />
+
+    </div>
+    <div>
+        <p>Email</p>
+        <input formControlName="email" id="input" className="input" placeholder="" [(ngModel)]="userInfo['userEmail']"
+            type="email" />
+
+    </div>
+    <div>
+        <p>Password</p>
+        <input formControlName="password" id="input" className="input" placeholder="" [(ngModel)]="userInfo['password']"
+            type="password" />
+
+    </div>
+    <div>
+        <p>First Name</p>
+        <input formControlName="firstName" id="input" className="input" placeholder=""
+            [(ngModel)]="userInfo['userFname']" type="text" />
+
+    </div>
+    <div>
+        <p>Last Name</p>
+        <input formControlName="lastName" id="input" className="input" placeholder=""
+            [(ngModel)]="userInfo['userLname']" type="text" />
+
+    </div>
+    <div>
+        <p>Role</p>
+        <select formControlName="role" id="select" [(ngModel)]="userInfo['userRole']">
+            <option value="Customer">Customer</option>
+            <option value="Admin">Admin</option>
+            <option value="Sales">Sales</option>
+            <option value="Billing In-Charge">Billing In-Charge</option>
+            <option value="Collection In-Charge">Collection In-Charge</option>
+        </select>
+    </div>
+
+    <!-- <button id="cancelbtn">Cancel</button> -->
+    <button id="savebtn" type="submit">Save</button>
+</form>

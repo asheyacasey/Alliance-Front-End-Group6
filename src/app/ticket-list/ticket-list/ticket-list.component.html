@@ -42,7 +42,8 @@
                             *ngIf="isAdmin || isCustomer"></button>
                     </td>
                     <td>
-                        <button button class="btn attach btn-info" (click)="attachDialog()" *ngIf="!isAdmin"></button>
+                        <button button class="btn attach btn-info" (click)="attachDialog(ticket.ticketID)"
+                            *ngIf="!isAdmin"></button>
                     </td>
                 </tr>
             </tbody>
