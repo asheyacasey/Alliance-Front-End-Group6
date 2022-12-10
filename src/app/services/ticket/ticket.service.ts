@@ -15,8 +15,8 @@ export class TicketService {
     return this.httpClient.post(this.baseUrl + "create", ticketInfo);
   }
 
-  editTicket(ticketInfo: any) {
-    return this.httpClient.post(this.baseUrl + "update/" + ticketInfo['ticketID'], ticketInfo);
+  editTicket(ticketInfo: any, ticketID: any) {
+    return this.httpClient.post(this.baseUrl + "update/" + ticketID, ticketInfo);
   }
 
   deleteTicket(ticketID: any) {
