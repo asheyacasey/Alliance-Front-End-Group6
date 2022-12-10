@@ -18,8 +18,8 @@ export class UserService {
     return this.httpClient.post(this.baseUrl + "create", userInfo);
   }
 
-  editUser(userInfo: any) {
-    return this.httpClient.post(this.baseUrl + "update/" + userInfo['userID'], userInfo);
+  editUser(userInfo: any, userID: any) {
+    return this.httpClient.post(this.baseUrl + "update/" + userID, userInfo);
   }
 
   deleteUser(userID: any) {
